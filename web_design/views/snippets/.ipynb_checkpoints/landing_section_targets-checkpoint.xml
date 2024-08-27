@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template name="Landing Section: Targets" id="landing_section_targets">
+        <section>
+            <div class="container">
+                landing_section_targets
+            </div>
+        </section>
+    </template>
+</odoo>

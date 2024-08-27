@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template name="Landing Section: Targets" id="landing_section_targets">
+        <section class="g-section g-image-bg g-format" style="background-image: url(/web_design/static/src/img/web_new/fondo-dirigido.png);">
+            <div class="g-section-inner">
+                <div class="g-home-3">
+                    <div class="g-section-title">
+                        <h3 class="g-text-center g-text-white">
+                            DIRIGIDO A
+                        </h3>
+                    </div>
+                    <div class="g-section-content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="g-home-3-target g-text-orange">
+                                        <div class="g-box">
+                                            <div class="g-box-body">
+                                                <img class="g-home-3-target-icon" src="/web_design/static/src/img/web_new/icon-dir-1.png" alt="Icono"/>
+                                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="g-home-3-target g-text-deepblue">
+                                        <div class="g-box">
+                                            <div class="g-box-body">
+                                                <img class="g-home-3-target-icon" src="/web_design/static/src/img/web_new/icon-dir-2.png" alt="Icono"/>
+                                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="g-home-3-target g-text-blue">
+                                        <div class="g-box">
+                                            <div class="g-box-body">
+                                                <img class="g-home-3-target-icon" src="/web_design/static/src/img/web_new/icon-dir-3.png" alt="Icono"/>
+                                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="g-home-3-target g-text-skyblue">
+                                        <div class="g-box">
+                                            <div class="g-box-body">
+                                                <img class="g-home-3-target-icon" src="/web_design/static/src/img/web_new/icon-dir-4.png" alt="Icono"/>
+                                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

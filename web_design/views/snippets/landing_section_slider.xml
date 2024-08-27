@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template name="Landing Section: Slider" id="landing_section_slider">
+        <section class="g-section g-image-bg g-image-bg-custom-1 g-format">
+            <div class="g-section-inner">
+                <div class="g-home-2">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 offset-lg-6">
+                                <div class="g-home-2-slider-wrapper">
+                                    <div class="g-slider">
+                                        <div class="g-slider-slide">
+                                            <div class="g-home-2-slide-content">
+                                                <h3 class="g-text-white">LOREM IPSUM</h3>
+                                                <h6 class="g-text-white">
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <div class="g-slider-slide">
+                                            <div class="g-home-2-slide-content">
+                                                <h3 class="g-text-white">LOREM IPSUM</h3>
+                                                <h6 class="g-text-white">
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="g-text-center">
+                                        <a class="g-download-button" href="#">
+                                            Descargar Brochure <img src="/web_design/static/src/img/web_new/download-pdf-icon.png" alt="Link para descargar brochure en PDF"/>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

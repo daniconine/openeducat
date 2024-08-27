@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template name="Landing Section: Results" id="landing_section_results">
+        <section class="g-section g-bg-deepblue g-format">
+            <div class="g-section-inner">
+                <div class="g-home-5">
+                    <div class="g-section-title">
+                        <h3 class="g-text-center g-text-orange">
+                            RESULTADOS COMPROBADOS
+                        </h3>
+                    </div>
+                    <div class="g-section-content">
+                        <div class="container">
+                            <div class="g-slider">
+                                <div class="g-slider-slide">
+                                    <div class="g-quote-block">
+                                        <div class="g-quote-block-head">
+                                            <div class="g-quote-block-head-inner">
+                                                <h5 class="mb-0">Lorem Ipsum</h5>
+                                                <p class="g-text-skyblue mt-0">
+                                                    <small>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                                                    </small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="g-quote-block-body">
+                                            <div class="g-quote-block-body-inner">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-6">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                    </div>
+                                                    <div class="col-lg-6 mt-3 mt-lg-0">
+                                                        <div class="g-video-aspect-ratio">
+                                                            <div class="g-video-aspect-ratio-inner">
+                                                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/OJva2FgWFPs"></iframe>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="g-slider-slide">
+                                    <div class="g-quote-block">
+                                        <div class="g-quote-block-head">
+                                            <div class="g-quote-block-head-inner">
+                                                <h5 class="mb-0">Lorem Ipsum</h5>
+                                                <p class="g-text-skyblue mt-0">
+                                                    <small>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                                                    </small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="g-quote-block-body">
+                                            <div class="g-quote-block-body-inner">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-6">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                    </div>
+                                                    <div class="col-lg-6 mt-3 mt-lg-0">
+                                                        <div class="g-video-aspect-ratio">
+                                                            <div class="g-video-aspect-ratio-inner">
+                                                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/OJva2FgWFPs"></iframe>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

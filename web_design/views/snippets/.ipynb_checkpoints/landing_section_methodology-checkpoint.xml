@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template name="Landing Section: Methodology" id="landing_section_methodology">
+        <section>
+            <div class="container">
+                landing_section_methodology
+            </div>
+        </section>
+    </template>
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template name="Landing Section: Postulate" id="landing_section_postulate">
+        <section class="g-section g-bg-white g-format">
+            <div class="g-section-inner">
+                <div class="g-home-8">
+                    <div class="g-section-title">
+                        <h3 class="g-text-center g-text-deepblue">
+                            ¡Postula ahora!
+                        </h3>
+                    </div>
+                    <div class="g-section-content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 offset-md-3">
+                                    <div class="g-box g-box-custom-1">
+                                        <div class="g-box-body">
+                                            <ul class="g-list g-text-white">
+                                                <li class="mb-4">
+                                                    <p><strong>Lorem ipsum:</strong> Ut enim ad minim veniam</p>
+                                                </li>
+                                                <li class="mb-4">
+                                                    <p><strong>Lorem ipsum:</strong> Ut enim ad minim veniam</p>
+                                                </li>
+                                                <li>
+                                                    <p><strong>Lorem ipsum:</strong> Ut enim ad minim veniam</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

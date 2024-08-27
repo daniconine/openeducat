@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template name="Homesectionform" id="homesectionform">
+            <section class="g-section g-large g-image-bg" style="background-image: url(/web_design/static/src/img/Landing_Portada_MBA.jpg);">
+                <div class="g-section-inner">
+                    <div class="g-home-1">
+                        <div class="container-fluid">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <div class="g-home-1-title-box">
+                                        <h1 class="g-text-white">MAESTRÍA EN GESTIÓN MINERA</h1>
+                                        <h3 class="g-text-orange">POTENCIA TU FUTURO HOY</h3>
+                                        <h3 class="g-text-white">Admisión extemporánea: Enero a Abril 2024</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="g-form-section">
+                                        <div class="g-form-section-logo">
+                                            <img src="/web_design/static/src/img/small-logo.png" alt="Logo"/>
+                                        </div>
+                                        <div class="g-box">
+                                            <div class="g-box-head">
+                                                <p class="g-text-black">Elige la modalidad</p>
+                                                <h4 class="g-text-white">SOLICITA MÁS INFORMACIÓN</h4>
+                                            </div>
+                                            <div class="g-box-body">
+                                                <div class="g-form">
+                                                    <form class="g-info-form">
+                                                        <div class="g-form-control">
+                                                            <input type="text" placeholder="Nombre"/>
+                                                        </div>
+                                                        <div class="g-form-control">
+                                                            <input type="text" placeholder="Apellido Paterno"/>
+                                                        </div>
+                                                        <div class="g-form-control">
+                                                            <input type="text" placeholder="Apellido Materno"/>
+                                                        </div>
+                                                        <div class="g-form-control">
+                                                            <input type="text" placeholder="DNI"/>
+                                                        </div>
+                                                        <div class="g-form-control">
+                                                            <input type="text" placeholder="Teléfono"/>
+                                                        </div>
+                                                        <div class="g-form-control">
+                                                            <input type="text" placeholder="Email"/>
+                                                        </div>
+                                                        <div class="g-form-control">
+                                                            <input type="text" placeholder="Cargo"/>
+                                                        </div>
+                                                        <div class="g-form-button">
+                                                            <button>Enviar</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </template>
+</odoo>
