@@ -34,8 +34,10 @@ class OpFaculty(models.Model):
                                  required=True, ondelete="cascade")
     first_name = fields.Char('Primer nombre', translate=True, required=True)
     middle_name = fields.Char('Segundo Nombre', size=128)
-    last_name = fields.Char('Apellidos', size=128, required=True)
-    birth_date = fields.Date('Fecha Nacimiento', required=True)
+    apellido_paterno = fields.Char("Apellido Paterno",size=128,required=True)
+    apellido_materno = fields.Char("Apellido Materno",size=128)
+    #last_name = fields.Char('Apellidos', size=128, required=True)
+    birth_date = fields.Date('Fecha Nacimiento')
     blood_group = fields.Selection([
         ('A+', 'A+ve'),
         ('B+', 'B+ve'),
@@ -49,7 +51,7 @@ class OpFaculty(models.Model):
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female')
-    ], 'Genero', required=True)
+    ], 'Genero')
     nationality = fields.Many2one('res.country', 'Nacionalidad')
     emergency_contact = fields.Many2one(
         'res.partner', 'Contacto de Emergencia')
@@ -71,6 +73,13 @@ class OpFaculty(models.Model):
         default=lambda self:
         self.env.user.department_ids and self.env.user.department_ids.ids or False)
     active = fields.Boolean(default=True)
+    
+    nivel_academic = fields.Selection([
+        ('Grado', 'Grado'),
+        ('Magister', 'Magister'),
+        ('Doctorado', 'Doctorado'),
+        
+    ], string='Nivel Académico')
 
     @api.constrains('birth_date')
     def _check_birthdate(self):
@@ -79,15 +88,22 @@ class OpFaculty(models.Model):
                 raise ValidationError(_(
                     "La fecha de nacimiento no puede ser la misma actual!"))
 
-    @api.onchange('first_name', 'middle_name', 'last_name')
+    #se cambio el sigueitne decorador
+    @api.onchange('first_name', 'middle_name', 'apellido_paterno', 'apellido_materno')
     def _onchange_name(self):
-        if not self.middle_name:
-            self.name = str(self.first_name) + " " + str(
-                self.last_name)
-        else:
-            self.name = str(self.first_name) + " " + str(
-                self.middle_name) + " " + str(self.last_name)
+        # Inicializamos la lista 'parts' con los campos que no son False y los convertimos en cadenas
+        parts = [str(self.first_name or ''),  # Aseguramos que first_name siempre sea una cadena
+                str(self.middle_name or ''),  # Si está vacío, asignamos una cadena vacía
+                str(self.apellido_paterno or ''),
+                str(self.apellido_materno or '')]
 
+        # Filtramos cualquier campo vacío para que no se añadan espacios innecesarios
+        parts = [part for part in parts if part]
+
+        # Unimos las partes en una cadena con espacios y asignamos a self.name
+        self.name = " ".join(parts)
+
+            
     def create_employee(self):
         for record in self:
             vals = {

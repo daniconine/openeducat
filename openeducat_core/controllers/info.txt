@@ -1,5 +1,6 @@
+*****************
 Explicación del Código:
-
+(app_main.py)
 1. Importaciones:
 http y request: 
 Son componentes del framework de Odoo para manejar controladores y peticiones HTTP.
@@ -25,6 +26,7 @@ Personalización Específica:
 Este archivo personaliza la forma en que los usuarios se redirigen después de iniciar sesión. En el contexto de OpenEduCat, parece estar diseñado para manejar roles específicos, como el de padres, lo que permitiría a un padre visualizar la información de sus hijos en el sistema
 
 
-**************************************
-Comentario: Permite redireccionar en el portal web, condicionanado, se puede aprovechar para crear el portal del estudiante y vea sus notas
-
+!!!!!!!!!!!!!!!!!!!!!!!!
+Comentario: Permite redireccionar en el portal web, 
+condicionando como si es estudiante o padre, se puede aprovechar para crear el portal del estudiante y vea sus notas
+*********************************************

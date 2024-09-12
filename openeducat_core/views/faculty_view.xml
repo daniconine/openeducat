@@ -61,12 +61,12 @@
                 <tree string="Docentes">  <!-- Cambia "Faculty" a "Docentes" -->
                     <field name="title"/>
                     <field name="name"/>
+                    <field name="id_number"/>
                     <field name="gender" optional="hide"/>
                     <field name="phone" optional="hide"/>
                     <field name="mobile" optional="hide"/>
-                    <field name="email" optional="hide"/>
-                    <field name="blood_group"/>
-                    <field name="emergency_contact"/>
+                    <field name="email"/>
+                    <field name="nivel_academic"/>
                     <field name="main_department_id" groups="openeducat_core.group_multi_department"/>
                     <field name="allowed_department_ids" widget="many2many_tags"
                            groups="openeducat_core.group_multi_department"/>
@@ -106,13 +106,16 @@
                                         <table>
                                             <tr>
                                                 <td style="padding-right:10px;">
-                                                    <field name="first_name" required="1" placeholder="Nombre"/>
+                                                    <field name="first_name" required="1" placeholder="1er Nombre"/>
                                                 </td>
                                                 <td style="padding-right:10px;">
-                                                    <field name="middle_name" placeholder="Segundo Nombre"/>
+                                                    <field name="middle_name" placeholder="2do Nombre"/>
                                                 </td>
                                                 <td style="padding-right:10px;">
-                                                    <field name="last_name" placeholder="Apellido"/>
+                                                    <field name="apellido_paterno" placeholder="Ape. Paterno"/>
+                                                </td>
+                                                <td style="padding-right:10px;">
+                                                    <field name="apellido_materno" placeholder="Ape. Materno"/>
                                                 </td>
                                             </tr>
                                         </table>
@@ -147,6 +150,7 @@
                                                options="{&quot;always_reload&quot;: True}"/>
                                     </group>
                                     <group>
+                                        <field name="id_number"/>
                                         <field name="email"/>
                                         <field name="phone"/>
                                         <field name="mobile"/>
@@ -157,7 +161,7 @@
                                                groups="openeducat_core.group_multi_department"/>
                                         <field name="blood_group"/>
                                         <field name="visa_info"/>
-                                        <field name="id_number"/>
+                                        <field name="nivel_academic"/>
                                         <field name="allowed_department_ids" widget="many2many_tags"
                                                groups="openeducat_core.group_multi_department"/>
                                     </group>
