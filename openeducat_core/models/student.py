@@ -35,7 +35,7 @@ class OpStudentCourse(models.Model):
     batch_id = fields.Many2one('op.batch', 'Batch', required=True, tracking=True)
     roll_number = fields.Char('Roll Number', tracking=True)
     subject_ids = fields.Many2many('op.subject', string='Subjects')
-    academic_years_id = fields.Many2one('op.academic.year', 'Academic Year')
+    program_id = fields.Many2one('op.program', 'Programa')  # Cambiado de academic_years_id a program_id
     academic_term_id = fields.Many2one('op.academic.term', 'Terms')
     state = fields.Selection([('running', 'Running'),
                               ('finished', 'Finished')],
