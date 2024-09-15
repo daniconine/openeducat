@@ -107,13 +107,16 @@
                                         <table>
                                             <tr>
                                                 <td style="padding-right:10px;">
-                                                    <field name="first_name" required="1" placeholder="First Name"/>
+                                                    <field name="first_name" required="1" placeholder="1er Nombre"/>
                                                 </td>
                                                 <td style="padding-right:10px;">
-                                                    <field name="middle_name" placeholder="Middle Name"/>
+                                                    <field name="middle_name" placeholder="2do Nombre"/>
                                                 </td>
                                                 <td style="padding-right:10px;">
-                                                    <field name="last_name" placeholder="Last Name"/>
+                                                    <field name="apellido_paterno" placeholder="Ap. Paterno"/>
+                                                </td>
+                                                <td style="padding-right:10px;">
+                                                    <field name="apellido_materno" placeholder="Ap. Materno"/>
                                                 </td>
                                             </tr>
                                         </table>

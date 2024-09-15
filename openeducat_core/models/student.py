@@ -1,22 +1,6 @@
 # -*- coding: utf-8 -*-
 ###############################################################################
 #
-#    OpenEduCat Inc
-#    Copyright (C) 2009-TODAY OpenEduCat Inc(<http://www.openeducat.org>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Lesser General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Lesser General Public License for more details.
-#
-#    You should have received a copy of the GNU Lesser General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
 ###############################################################################
 
 from odoo import models, fields, api, _
@@ -35,8 +19,8 @@ class OpStudentCourse(models.Model):
     batch_id = fields.Many2one('op.batch', 'Batch', required=True, tracking=True)
     roll_number = fields.Char('Roll Number', tracking=True)
     subject_ids = fields.Many2many('op.subject', string='Subjects')
-    program_id = fields.Many2one('op.program', 'Programa')  # Cambiado de academic_years_id a program_id
-    academic_term_id = fields.Many2one('op.academic.term', 'Terms')
+    #program_id = fields.Many2one('op.program', 'Programa')  # Cambiado de academic_years_id a program_id
+    #academic_term_id = fields.Many2one('op.academic.term', 'Terms')
     state = fields.Selection([('running', 'Running'),
                               ('finished', 'Finished')],
                              string="Status", default="running")
@@ -67,9 +51,10 @@ class OpStudent(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _inherits = {"res.partner": "partner_id"}
 
-    first_name = fields.Char('First Name',  translate=True)
-    middle_name = fields.Char('Middle Name', translate=True)
-    last_name = fields.Char('Last Name', translate=True)
+    first_name = fields.Char('Primer nombre', translate=True, required=True)
+    middle_name = fields.Char('Segundo Nombre', size=128)
+    apellido_paterno = fields.Char("Apellido Paterno",size=128,required=True)
+    apellido_materno = fields.Char("Apellido Materno",size=128)
     birth_date = fields.Date('Birth Date')
     blood_group = fields.Selection([
         ('A+', 'A+ve'),
@@ -106,15 +91,20 @@ class OpStudent(models.Model):
         'GR Number must be unique per student!'
     )]
 
-    @api.onchange('first_name', 'middle_name', 'last_name')
+    #se cambio el sigueitne decorador
+    @api.onchange('first_name', 'middle_name', 'apellido_paterno', 'apellido_materno')
     def _onchange_name(self):
-        if not self.middle_name:
-            self.name = str(self.first_name) + " " + str(
-                self.last_name
-            )
-        else:
-            self.name = str(self.first_name) + " " + str(
-                self.middle_name) + " " + str(self.last_name)
+        # Inicializamos la lista 'parts' con los campos que no son False y los convertimos en cadenas
+        parts = [str(self.first_name or ''),  # Aseguramos que first_name siempre sea una cadena
+                str(self.middle_name or ''),  # Si está vacío, asignamos una cadena vacía
+                str(self.apellido_paterno or ''),
+                str(self.apellido_materno or '')]
+
+        # Filtramos cualquier campo vacío para que no se añadan espacios innecesarios
+        parts = [part for part in parts if part]
+
+        # Unimos las partes en una cadena con espacios y asignamos a self.name
+        self.name = " ".join(parts)
 
     @api.constrains('birth_date')
     def _check_birthdate(self):

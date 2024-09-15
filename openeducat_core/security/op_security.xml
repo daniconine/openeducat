@@ -38,25 +38,11 @@
             <field name="domain_force">[(1, '=', 1)]</field>
         </record>
 
-        <!-- Actualización de reglas para Programas -->
-        <record model="ir.rule" id="program_multi_comp_rule">
-            <field name="name">Program multi company</field>
-            <field name="model_id" ref="openeducat_core.model_op_program"/> <!-- Actualizado para op.program -->
-            <field name="global" eval="True"/>
-            <field name="domain_force">
-                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids)]
-            </field>
-        </record>
+        <!-- Actualización de reglas para Program-->
+        
 
-        <!-- Actualización de reglas para Ciclos Académicos -->
-        <record model="ir.rule" id="academic_term_multi_comp_rule">
-            <field name="name">Academic Term multi company</field>
-            <field name="model_id" ref="openeducat_core.model_op_academic_term"/>
-            <field name="global" eval="True"/>
-            <field name="domain_force">
-                ['|','|',('company_id','=',False),('company_id','child_of',[user.company_id.id]),('company_id','in',user.company_ids.ids)]
-            </field>
-        </record>
+        <!-- Actualización de reglas para cademic term -->
+        
 
     </data>
 </odoo>

@@ -6,11 +6,15 @@
             <field name="model">op.course</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree string="Course">
+                <tree string="Programas">
                     <field name="name"/>
                     <field name="code"/>
-                    <field name="evaluation_type"/>
+                    <field name="area"/>
+                    <field name="state"/>
+                    <field name="evaluation_type" optional="hide"/>
                     <field name="parent_id"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
                     <field name="min_unit_load" optional="hide"/>
                     <field name="max_unit_load" optional="hide"/>
                     <field name="subject_ids" widget="many2many_tags"/>
@@ -24,7 +28,7 @@
             <field name="model">op.course</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <form string="Course">
+                <form string="Programas">
                     <header/>
                     <sheet>
                         <div name="button_box" class="oe_button_box">
@@ -36,17 +40,23 @@
                             <group class="course_info">
                                 <field name="name"/>
                                 <field name="code"/>
+                                <field name="area"/>
+                                <field name="state"/>
                             </group>
                         </group>
                         <group class="pt-3">
+                            
                             <group name="main">
+                                <field name="number_cycle"/>
                                 <field name="evaluation_type"/>
                                 <field name="min_unit_load"/>
+                                <field name="start_date"/>
                                 <field name="department_id" groups="openeducat_core.group_multi_department"/>
                             </group>
                             <group>
                                 <field name="parent_id"/>
                                 <field name="max_unit_load"/>
+                                <field name="end_date"/>
                             </group>
                         </group>
                         <notebook>
@@ -69,9 +79,11 @@
             <field name="model">op.course</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <search string="Course">
+                <search string="Programas">
                     <field name="name"/>
                     <field name="code"/>
+                    <field name="area"/>
+                    <field name="state"/>
                     <field name="evaluation_type"/>
                     <field name="parent_id"/>
                     <field name="department_id"/>
@@ -94,17 +106,20 @@
             <field name="model">op.course</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <pivot string="Course">
+                <pivot string="Programas">
                     <field name="name" type="row"/>
                     <field name="parent_id"/>
+                    <field name="state"/>
                     <field name="max_unit_load"/>
                     <field name="min_unit_load"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
                 </pivot>
             </field>
         </record>
 
         <record model="ir.actions.act_window" id="act_open_op_course_view">
-            <field name="name">Courses</field>
+            <field name="name">Programas</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">op.course</field>
             <field name="binding_view_types">form</field>

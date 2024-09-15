@@ -53,8 +53,7 @@
         'views/res_config_setting_view.xml',
         'views/student_portal_view.xml',
         'views/student_course_view.xml',
-        'views/op_program_view.xml',
-        'views/op_academic_term_view.xml',
+        
         
         'menu/openeducat_core_menu.xml',
         'menu/faculty_menu.xml',

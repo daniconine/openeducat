@@ -32,5 +32,3 @@ from . import subject_registration
 from . import res_config_setting
 from . import update
 from . import student_portal
-from . import op_academic_term
-from . import op_program
