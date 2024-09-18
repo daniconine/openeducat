@@ -6,9 +6,10 @@
             <field name="model">op.subject</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree string="Subject">
+                <tree string="Curso/Asignatura">
                     <field name="name"/>
                     <field name="code"/>
+                    <field name="cycle"/>
                     <field name="type"/>
                     <field name="subject_type"/>
                     <field name="grade_weightage"/>
@@ -22,7 +23,7 @@
             <field name="model">op.subject</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <form string="Subject">
+                <form string="Curso/Asignatura">
                     <header/>
                     <sheet>
                         <field name="active" invisible="1"/>
@@ -31,6 +32,7 @@
                         <group>
                             <group>
                                 <field name="name"/>
+                                <field name="cycle"/>
                                 <field name="type"/>
                                 <field name="subject_type"/>
                                 <field name="department_id" groups="openeducat_core.group_multi_department"/>
@@ -40,6 +42,12 @@
                                 <field name="grade_weightage"/>
                             </group>
                         </group>
+                        <notebook>
+                            <page string="Docentes" name="faculty">
+                                <field name="faculty_ids" nolabel="1">
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
@@ -54,9 +62,10 @@
             <field name="model">op.subject</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <search string="Subject">
+                <search string="Curso/Asignatura">
                     <field name="name"/>
                     <field name="code"/>
+                    <field name="cycle"/>
                     <field name="type"/>
                     <field name="department_id"/>
                     <newline/>
@@ -71,7 +80,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="act_open_op_subject_view">
-            <field name="name">Subjects</field>
+            <field name="name">Curso/Asignatura</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">op.subject</field>
             <field name="binding_view_types">form</field>

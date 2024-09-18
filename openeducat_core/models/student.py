@@ -9,21 +9,29 @@ from odoo.exceptions import ValidationError
 
 class OpStudentCourse(models.Model):
     _name = "op.student.course"
-    _description = "Student Course Details"
+    _description = "Detalle de Asignaturas"
     _inherit = "mail.thread"
     _rec_name = 'student_id'
 
     student_id = fields.Many2one('op.student', 'Student',
                                  ondelete="cascade", tracking=True)
-    course_id = fields.Many2one('op.course', 'Course', required=True, tracking=True)
+    course_id = fields.Many2one('op.course', 'Programa', required=True, tracking=True)
     batch_id = fields.Many2one('op.batch', 'Batch', required=True, tracking=True)
     roll_number = fields.Char('Roll Number', tracking=True)
-    subject_ids = fields.Many2many('op.subject', string='Subjects')
+    subject_ids = fields.Many2many('op.subject', string='Cursos/Asignaturas')
     #program_id = fields.Many2one('op.program', 'Programa')  # Cambiado de academic_years_id a program_id
     #academic_term_id = fields.Many2one('op.academic.term', 'Terms')
     state = fields.Selection([('running', 'Running'),
                               ('finished', 'Finished')],
                              string="Status", default="running")
+    
+    mode=fields.Selection([('presencial','Presencial'),
+                              ('virtual', 'Virtual'),
+                              ('hibrido', 'Hibrido')],
+                             string="Modalidad", default="presencial")
+    type_roll=fields.Selection([('regular', 'Regular'),
+                              ('especial', 'Especial')],
+                             string="Tipo Matricula", default="regular")
 
     _sql_constraints = [
         ('unique_name_roll_number_id',
@@ -55,7 +63,7 @@ class OpStudent(models.Model):
     middle_name = fields.Char('Segundo Nombre', size=128)
     apellido_paterno = fields.Char("Apellido Paterno",size=128,required=True)
     apellido_materno = fields.Char("Apellido Materno",size=128)
-    birth_date = fields.Date('Birth Date')
+    birth_date = fields.Date('Fec Nacimiento')
     blood_group = fields.Selection([
         ('A+', 'A+ve'),
         ('B+', 'B+ve'),
@@ -65,14 +73,14 @@ class OpStudent(models.Model):
         ('B-', 'B-ve'),
         ('O-', 'O-ve'),
         ('AB-', 'AB-ve')
-    ], string='Blood Group')
+    ], string='Grupo Sanguineo')
     gender = fields.Selection([
         ('m', 'Male'),
         ('f', 'Female'),
         ('o', 'Other')
-    ], 'Gender', required=True, default='m')
-    nationality = fields.Many2one('res.country', 'Nationality')
-    emergency_contact = fields.Many2one('res.partner', 'Emergency Contact')
+    ], 'Genero', required=True, default='m')
+    nationality = fields.Many2one('res.country', 'Nacionalidad')
+    emergency_contact = fields.Many2one('res.partner', 'Contacto emergencia')
     visa_info = fields.Char('Visa Info', size=64)
     id_number = fields.Char('ID Card Number', size=64)
     partner_id = fields.Many2one('res.partner', 'Partner',
@@ -81,9 +89,17 @@ class OpStudent(models.Model):
     gr_no = fields.Char("GR Number", size=20)
     category_id = fields.Many2one('op.category', 'Category')
     course_detail_ids = fields.One2many('op.student.course', 'student_id',
-                                        'Course Details',
+                                        'Detalle Programa',
                                         tracking=True)
     active = fields.Boolean(default=True)
+
+    subject_ids = fields.Many2many(
+        'op.subject',
+        string='Asignaturas',
+        compute='_compute_subject_ids',
+        help='Asignaturas en las que está inscrito el estudiante'
+    )
+
 
     _sql_constraints = [(
         'unique_gr_no',
@@ -134,3 +150,9 @@ class OpStudent(models.Model):
                     'tz': self._context.get('tz'),
                 })
                 record.user_id = user_id
+
+    #funcion que busca las asiganturas en que esta el estudiante
+    def _compute_subject_ids(self):
+        for student in self:
+            courses = self.env['op.student.course'].search([('student_id', '=', student.id)])
+            student.subject_ids = [(6, 0, courses.mapped('subject_ids').ids)]

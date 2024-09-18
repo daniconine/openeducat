@@ -60,7 +60,7 @@
                             </group>
                         </group>
                         <notebook>
-                            <page string="Subjects" name="subject">
+                            <page string="Cursos/Asignaturas" name="subject">
                                 <field name="subject_ids" nolabel="1">
                                 </field>
                             </page>

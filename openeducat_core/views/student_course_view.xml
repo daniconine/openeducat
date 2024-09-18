@@ -6,9 +6,11 @@
             <field name="model">op.student.course</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree string="Student Course Detail">
+                <tree string="Registro en Asignatura">
                     <field name="student_id"/>
                     <field name="course_id"/>
+                    <field name="mode"/>
+                    <field name="type_roll"/>
                     <field name="batch_id"/>
                     <field name="roll_number"/>
                     <!--field name="program_id" optional="hide"/-->
@@ -24,7 +26,7 @@
             <field name="model">op.student.course</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <form string="Student Course Detail">
+                <form string="Registro en Asignatura">
                     <header>
                             <field name="state" widget="statusbar"/>
                     </header>
@@ -33,6 +35,8 @@
                             <group>
                                 <field name="student_id"/>
                                 <field name="batch_id" domain="[('course_id', '=', course_id)]"/>
+                                <field name="mode"/>
+                                <field name="type_roll"/>
                                 <!--field name="program_id"/-->
                             </group>
                             <group>
@@ -60,7 +64,7 @@
             <field name="model">op.student.course</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <search string="Student Course">
+                <search string="Programa - Estudiante">
                     <field name="student_id"/>
                     <field name="course_id"/>
                     <field name="batch_id"/>
@@ -86,7 +90,7 @@
             <field name="model">op.student.course</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <pivot string="Student Course">
+                <pivot string="Programa - Estudiante">
                     <field name="student_id"/>
                     <field name="course_id" type="row"/>
                     <field name="batch_id"/>
@@ -95,7 +99,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="act_open_op_student_course_view">
-            <field name="name">Student Course Detail</field>
+            <field name="name">Registro en Asignatura</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">op.student.course</field>
             <field name="binding_view_types">form</field>

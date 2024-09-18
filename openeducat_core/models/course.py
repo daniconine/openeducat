@@ -14,7 +14,7 @@ class OpCourse(models.Model):
         [('normal', 'Normal'), ('GPA', 'GPA'),
          ('CWA', 'CWA'), ('CCE', 'CCE')],
         'Evaluation Type', default="normal", required=True)
-    subject_ids = fields.Many2many('op.subject', string='Subject(s)')
+    subject_ids = fields.Many2many('op.subject', string='Cursos/Asignaturas')
     max_unit_load = fields.Float("Maximo N° inscritos")
     min_unit_load = fields.Float("Minimo N° inscritos")
     department_id = fields.Many2one(

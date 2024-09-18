@@ -6,7 +6,7 @@
             <field name="model">op.subject.registration</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree string="Course Registration">
+                <tree string="Registro en Programa">
                     <field name="name"/>
                     <field name="student_id"/>
                     <field name="course_id"/>
@@ -24,7 +24,7 @@
             <field name="model">op.subject.registration</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <form string="Course Registration">
+                <form string="Registro en Programa">
                     <header>
                         <button name="action_submitted" string="Submit"
                                 groups="openeducat_core.group_op_back_office_admin,openeducat_core.group_op_faculty"
@@ -82,7 +82,7 @@
             <field name="model">op.subject.registration</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <search string="Course Registration">
+                <search string="Registro en Programa">
                     <field name="student_id"/>
                     <field name="course_id"/>
                     <field name="batch_id"/>
@@ -129,7 +129,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="act_subject_registration_view">
-            <field name="name">Subject Registration</field>
+            <field name="name">Registro en Programa</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">op.subject.registration</field>
             <field name="binding_view_types">form</field>
@@ -140,7 +140,7 @@
         </record>
 
         <record id="seq_op_subject_registration" model="ir.sequence">
-            <field name="name">Subject Registration</field>
+            <field name="name">Registro en Programa - Subject Registration</field>
             <field name="code">op.subject.registration</field>
             <field name="prefix">SR</field>
             <field name="padding">4</field>

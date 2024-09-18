@@ -25,13 +25,13 @@ from odoo.exceptions import ValidationError
 
 class OpSubjectRegistration(models.Model):
     _name = "op.subject.registration"
-    _description = "Subject Registration Details"
+    _description = "Registro Curso Asignatura"
     _inherit = ["mail.thread"]
 
     name = fields.Char('Name', readonly=True, default='New')
     student_id = fields.Many2one('op.student', 'Student', required=True,
                                  tracking=True)
-    course_id = fields.Many2one('op.course', 'Course', required=True,
+    course_id = fields.Many2one('op.course', 'Programa', required=True,
                                 tracking=True)
     batch_id = fields.Many2one('op.batch', 'Batch', required=True,
                                tracking=True)
@@ -44,7 +44,7 @@ class OpSubjectRegistration(models.Model):
     state = fields.Selection([
         ('draft', 'Draft'), ('submitted', 'Submitted'),
         ('approved', 'Approved'), ('rejected', 'Rejected')],
-        default='draft', string='state', copy=False,
+        default='draft', string='Estado', copy=False,
         tracking=True)
     max_unit_load = fields.Float('Maximum Unit Load',
                                  tracking=True)
@@ -75,7 +75,7 @@ class OpSubjectRegistration(models.Model):
                 record.state = 'approved'
             else:
                 raise ValidationError(
-                    _("Course not found on student's admission!"))
+                    _("Program not found on student's admission!"))
 
     def action_submitted(self):
         self.state = 'submitted'
