@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <odoo>
+        <template id="portal_my_home_button" inherit_id="portal.portal_my_home" name="Add Final Grades Button to Portal">
+            <xpath expr="//div[contains(@class, 'o_portal_docs')]" position="inside">
+                <a href="/my/final-grades" class="btn btn-primary" style="margin-bottom: 20px;">
+                    Mis Notas
+                </a>
+            </xpath>
+        </template>
+    </odoo>
+    

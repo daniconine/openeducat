@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_op_exam_type,access_op_exam_type,model_op_exam_type,openeducat_exam.group_op_exam_user,1,1,1,1
+access_op_exam_result,access_op_exam_result,model_op_exam_result,openeducat_exam.group_op_exam_user,1,1,1,1
+access_op_exam,access_op_exam,model_op_exam,openeducat_exam.group_op_exam_user,1,1,1,1
+access_op_subject,access_op_subject,model_op_subject,openeducat_exam.group_op_exam_user,1,1,1,1
+access_op_final_grade,access_op_final_grade,model_op_final_grade,openeducat_exam.group_op_exam_user,1,1,1,1
+access_op_grade_configuration,access_op_grade_configuration,model_op_grade_configuration,openeducat_exam.group_op_exam_user,1,1,1,1
+access_op_exam_result_user,Access to Exam Results,model_op_exam_result,base.group_user,1,1,1,0
+access_op_final_grade_admin,Access to Final Grades,model_op_final_grade,base.group_system,1,1,1,1

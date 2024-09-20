@@ -1,0 +1,41 @@
+{
+    'name': 'OpenEduCat Exam',
+    'version': '16.0.1.0',
+    'license': 'LGPL-3',
+    'category': 'Education',
+    "sequence": 3,
+    'summary': 'Manage Exam',
+    'complexity': "easy",
+    'author': 'OpenEduCat Inc',
+    'website': 'http://www.openeducat.org',
+    'depends': ['openeducat_classroom'],
+    'data': [
+        'security/op_security.xml',
+        'security/ir.model.access.csv',
+        
+        #'views/exam_room_view.xml',
+        'views/exam_type_view.xml',
+        #'wizard/room_distribution_view.xml',
+        #'wizard/held_exam_view.xml',
+        'views/exam_view.xml',
+        'views/exam_result.xml', 
+        'views/exam_final_grade.xml',    
+        'views/grade_configuration_view.xml',
+              
+        #'report/report_ticket.xml',
+        #'report/student_marksheet.xml',
+        #'report/report_menu.xml',
+        #'wizard/student_hall_tickets_wizard_view.xml',
+        'views/exam_portal.xml',
+        'views/exam_subject.xml',
+        'views/portal_menu.xml',
+        'menus/op_menu.xml',
+    ],
+    
+    'images': [
+        'static/description/openeducat_exam_banner.jpg',
+    ],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+}
