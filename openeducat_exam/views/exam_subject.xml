@@ -2,73 +2,67 @@
 <odoo>
     <data>
        
-        <record id="view_op_subject_kanban" model="ir.ui.view">
-            <field name="name">op.subject.kanban</field>
+        <record id="view_op_exam_subject_tree" model="ir.ui.view"> <!-- Cambiar el ID -->
+            <field name="name">op.exam.subject.tree</field>
             <field name="model">op.subject</field>
             <field name="arch" type="xml">
-                <kanban string="Asignaturas">
+                <tree string="Examenes de Asignatura">
                     <field name="name"/>
                     <field name="code"/>
-                    <field name="cycle"/>
-                    <field name="faculty_ids"/>
-                    <templates>
-                        <t t-name="kanban-box">
-                            <div class="oe_kanban_details">
-                                <strong><t t-esc="record.name.value"/></strong>
-                                <div>
-                                    <span><t t-esc="record.code.value"/></span>
-                                </div>
-                                <div>
-                                    <span><t t-esc="record.cycle.value"/></span>
-                                </div>
-                            </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
-        
-        
-
-        <record id="view_op_subject_tree" model="ir.ui.view">
-            <field name="name">op.subject.tree</field>
-            <field name="model">op.subject</field>
-            <field name="arch" type="xml">
-                <tree string="Asignaturas">
-                    <field name="name"/>
-                    <field name="code"/>
+                    <field name="course_ids" widget="many2many_tags"/>
                     <field name="cycle"/>
                     <field name="faculty_ids"/>                    
                 </tree>
             </field>
         </record>
-
-        <!-- Vista de formulario (form) para Asignaturas -->
-        <record id="view_op_subject_form" model="ir.ui.view">
-            <field name="name">op.subject.form</field>
+        
+        <record id="view_op_exam_subject_form" model="ir.ui.view"> <!-- Cambiar el ID -->
+            <field name="name">op.exam.subject.form</field>
             <field name="model">op.subject</field>
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <form string="Asignaturas">
-                    <group>
-                        <field name="name"/>
-                        <field name="code"/>
-                        <field name="cycle"/>
-                        <field name="faculty_ids"/> 
-                        <field name="exam_ids"/>                     
-                    </group>
+                <form string="Examenes de Asignatura">
+                    
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" readonly="1"/>
+                                <field name="cycle" readonly="1"/>
+                                <field name="type" readonly="1"/>
+                                <field name="subject_type" readonly="1"/>
+                                <field name="department_id" groups="openeducat_core.group_multi_department"/>
+                            </group>
+                            <group>
+                                <field name="code" readonly="1"/>
+                                <field name="course_ids" widget="many2many_tags" readonly="1"/>
+                                <field name="grade_weightage" readonly="1"/>
+                                <field name="faculty_ids" widget="many2many_tags" readonly="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Examenes" name="exam" >
+                                                            
+                                <field name="exam_ids" nolabel="1">
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    
                 </form>
             </field>
         </record>
+        
 
         <!-- Acción para ver todas las Asignaturas -->
-        <record model="ir.actions.act_window" id="act_open_op_subject_view">
-            <field name="name">Asignaturas</field>
+        <record model="ir.actions.act_window" id="act_open_op_exam_subject_view">
+            <field name="name">Examenes de Asignatura</field>
             <field name="res_model">op.subject</field>
-            <field name="view_mode">kanban,tree,form</field>
-            <field name="view_id" ref="view_op_subject_kanban"/>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_op_exam_subject_tree"/> <!-- Nueva referencia -->
             <field name="domain">[]</field>
             <field name="context">{}</field>
         </record>
+        
 
 
     </data>

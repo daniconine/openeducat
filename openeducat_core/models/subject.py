@@ -29,9 +29,12 @@ class OpSubject(models.Model):
         ('3', 'Ciclo 3'),
         ('4', 'Ciclo 4')
     ], string='Ciclo')
+    
     faculty_ids = fields.Many2many('op.faculty', string='Docentes') #para añadir en vista
-    
-    
+    course_ids = fields.Many2many('op.course',string='Programa',
+        help='Programa relacionado con esta asignatura'
+    )
+                
     _sql_constraints = [
         ('unique_subject_code',
          'unique(code)', 'Code should be unique per subject!'),

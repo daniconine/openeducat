@@ -6,13 +6,13 @@
                   name="Exams"
                   sequence="70"
                   web_icon="openeducat_exam,static/description/icon.png"
-                  action="act_open_op_subject_view"/>
+                  action="act_open_op_exam_subject_view"/>
 
         <!-- Submenú para la gestión de exámenes -->
         <menuitem id="menu_op_school_exam_result"
                   name="Manage Exams"
                   parent="menu_op_exam_root"
-                  sequence="50"
+                  sequence="20"
                   action="act_open_op_exam_view"  
                   groups="openeducat_exam.group_op_exam_admin,openeducat_exam.group_op_exam_user"/>
 
@@ -21,14 +21,14 @@
                   name="Asignatura" 
                   parent="menu_op_exam_root"
                   sequence="10" 
-                  action="act_open_op_subject_view" 
+                  action="act_open_op_exam_subject_view" 
                   groups="openeducat_exam.group_op_exam_admin,openeducat_exam.group_op_exam_user"/>
 
         <!-- Menú de configuración general -->
         <menuitem id="menu_op_exam_general"
                   name="General"
                   parent="menu_op_exam_root"
-                  sequence="20"/>
+                  sequence="50"/>
 
         <!-- Menú de configuración de Tipos de Exámenes -->
         <menuitem id="menu_op_exam_type_sub"

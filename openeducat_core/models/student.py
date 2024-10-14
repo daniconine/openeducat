@@ -45,6 +45,15 @@ class OpStudentCourse(models.Model):
          'Student must be unique per Batch!'),
     ]
 
+    # Método para asignar el curso a cada asignatura
+    @api.onchange('subject_ids')
+    def _onchange_subject_ids(self):
+        for record in self:
+            for subject in record.subject_ids:
+                #subject.course_id = record.course_id  # Asigna el curso al campo correspondiente en la asignatura
+                if record.course_id not in subject.course_ids:
+                    subject.course_ids = [(4, record.course_id.id)]
+    
     @api.model
     def get_import_templates(self):
         return [{

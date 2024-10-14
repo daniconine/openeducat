@@ -1,24 +1,4 @@
 # -*- coding: utf-8 -*-
-###############################################################################
-#
-#    OpenEduCat Inc
-#    Copyright (C) 2009-TODAY OpenEduCat Inc(<http://www.openeducat.org>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Lesser General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Lesser General Public License for more details.
-#
-#    You should have received a copy of the GNU Lesser General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-###############################################################################
-
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
@@ -42,8 +22,8 @@ class OpSubjectRegistration(models.Model):
     elective_subject_ids = fields.Many2many(
         'op.subject', string="Elective Subjects")
     state = fields.Selection([
-        ('draft', 'Draft'), ('submitted', 'Submitted'),
-        ('approved', 'Approved'), ('rejected', 'Rejected')],
+        ('draft', 'Draft'), ('submitted', 'Matriculado'),
+        ('approved', 'Aprobado'), ('rejected', 'Retirado')],
         default='draft', string='Estado', copy=False,
         tracking=True)
     max_unit_load = fields.Float('Maximum Unit Load',
